@@ -56,7 +56,7 @@ const reload = () => {
 restart.addEventListener("click", reload);
 
 let newDate = new Date();
-let count = 10;
+let count = 20;
 let setmilisec = 0;
 let milisec;
 
@@ -64,22 +64,22 @@ let time;
 
 // function for time counter
 const timerCount = () => {
-  if (count == 10) {
-    newDate.setSeconds(10);
+  if (count == 20) {
+    newDate.setSeconds(20);
     newDate.setMilliseconds(setmilisec);
     time = newDate.getUTCSeconds() + " : 0" + newDate.getUTCMilliseconds();
-  } else if (count < 10) {
-    count = 10;
+  } else if (count < 20) {
+    count = 20;
     newDate.setSeconds(0);
     newDate.setMilliseconds(count - setmilisec);
     time =
       "0" + newDate.getUTCSeconds() + " : 0" + newDate.getUTCMilliseconds();
   }
   setmilisec++;
-  count = 9;
+  count = 19;
   timestamp.style.border = "2px solid lawngreen";
   timestamp.style.color = "lawngreen";
-  if (setmilisec == 10) {
+  if (setmilisec == 20) {
     time = "00 : 00";
     input.setAttribute("readonly", true);
     input.style.cursor = "no-drop";
