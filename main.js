@@ -72,6 +72,11 @@ const timerCount = () => {
     count = 20;
     newDate.setSeconds(0);
     newDate.setMilliseconds(count - setmilisec);
+    time = "0" + newDate.getUTCSeconds() + " : " + newDate.getUTCMilliseconds();
+  } else if (count < 10) {
+    count = 20;
+    newDate.setSeconds(0);
+    newDate.setMilliseconds(count - setmilisec);
     time =
       "0" + newDate.getUTCSeconds() + " : 0" + newDate.getUTCMilliseconds();
   }
@@ -89,7 +94,7 @@ const timerCount = () => {
     // console.log(time);
     clearInterval(timerId);
   }
-  
+
   timestamp.innerText = time;
 };
 
