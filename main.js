@@ -23,6 +23,7 @@ const compare = (comp, inputVal) => {
   guessAttempt.innerText = attempt;
   if (comp == inputVal) {
     result.innerText = "Number is matched!";
+    result.style.color = "lawngreen";
     input.value = "";
     input.setAttribute("readonly", true);
     input.style.cursor = "no-drop";
@@ -58,7 +59,7 @@ restart.addEventListener("click", reload);
 let newDate = new Date();
 let count = 20;
 let setmilisec = 0;
-let milisec;
+let milisec = 19;
 
 let time;
 
@@ -68,23 +69,37 @@ const timerCount = () => {
     newDate.setSeconds(20);
     newDate.setMilliseconds(setmilisec);
     time = newDate.getUTCSeconds() + " : 0" + newDate.getUTCMilliseconds();
-  } else if (count < 20) {
+    console.log(count, setmilisec, milisec);
+  } else if (milisec < 20 && milisec > 10) {
     count = 20;
+    milisec = count - setmilisec;
     newDate.setSeconds(0);
-    newDate.setMilliseconds(count - setmilisec);
+    newDate.setMilliseconds(milisec);
     time = "0" + newDate.getUTCSeconds() + " : " + newDate.getUTCMilliseconds();
-  } else if (count < 10) {
+    console.log(count, setmilisec, milisec);
+  } else if (milisec == 10) {
     count = 20;
+    milisec = count - setmilisec;
     newDate.setSeconds(0);
-    newDate.setMilliseconds(count - setmilisec);
+    newDate.setMilliseconds(milisec);
     time =
       "0" + newDate.getUTCSeconds() + " : 0" + newDate.getUTCMilliseconds();
+    console.log(count, setmilisec, milisec);
+  } else if (milisec < 10) {
+    count = 20;
+    milisec = count - setmilisec;
+    newDate.setSeconds(0);
+    newDate.setMilliseconds(milisec);
+    time =
+      "0" + newDate.getUTCSeconds() + " : 0" + newDate.getUTCMilliseconds();
+    console.log(count, setmilisec, milisec);
   }
   setmilisec++;
   count = 19;
   timestamp.style.border = "2px solid lawngreen";
   timestamp.style.color = "lawngreen";
-  if (setmilisec == 20) {
+
+  if (milisec == 0) {
     time = "00 : 00";
     input.setAttribute("readonly", true);
     input.style.cursor = "no-drop";
