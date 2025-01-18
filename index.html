@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Guess the Number</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h2 id="heading">Guess The Number</h2>
+      <p id="range">Enter number between 1 - 100</p>
+      <p id="timestamp">00:00</p>
+      <form>
+        <input id="input" type="number" placeholder="Enter a number" required/>
+        <button id="submit">Submit Number</button>
+      </form>
+      <div class="attempt">
+        <p>You said : <span id="guessNum">0</span></p>
+        <p>Attempt : <span id="guessAttempt">0</span></p>
+      </div>
+      <p id="result">Start</p>
+      <p id="reloadMess"></p>
+      <button id="restart">Restart</button>
+    </div>
+    <script src="main.js"></script>
+  </body>
+</html>
