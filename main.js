@@ -50,7 +50,7 @@ submit.addEventListener("click", (e) => {
 
 // function for reloading
 const reload = () => {
-  window.location = "http://127.0.0.1:5500/Project2/index.html";
+  window.location = "https://aman7ak.github.io/Modern-Guess-Number-Project/";
 };
 
 // function for restart button
